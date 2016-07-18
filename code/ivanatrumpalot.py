@@ -4,12 +4,14 @@ import re
 import numpy as np
 import json
 import pickle
-
+from subprocess import check_output
 from keras.models import model_from_json
 
 
+curr_dir=check_output(["pwd"])
+
 # Code directory
-os.chdir("/root/ivanatrumpalot/code")
+os.chdir(curr_dir.replace("\n",""))
 
 def clean_text(text, alphabet=None):
 
